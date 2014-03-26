@@ -13,10 +13,12 @@ if ($_POST) {
 
     $statement = $db->prepare($query);
     $statement->execute();
-    $result = $statement->rowCount();
+    $row_count = $statement->rowCount();
+    $result = $statement->fetch(PDO::FETCH_ASSOC);
 
-    if ( $result > 0) {
+    if ( $row_count > 0) {
       $_SESSION['email'] = $_POST['email'];
+      $_SESSION['username'] = $result['username'];
       header('Location: test.html');
     }
     else {

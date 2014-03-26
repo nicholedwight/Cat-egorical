@@ -9,6 +9,7 @@
   else:
 ?>
 
+<h2>Hello, <?php echo $_SESSION['username']; ?>!</h2>
 <a href="logout.php" class="small round button">Logout</a>
 
 
