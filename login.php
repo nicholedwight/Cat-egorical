@@ -20,12 +20,14 @@ if ($_POST) {
       $_SESSION['email'] = $_POST['email'];
       $_SESSION['username'] = $result['username'];
       header('Location: test.html');
+    } else {
+      $error = "Your login details are incorrect.";
     }
-    else {
-      header('Location: index.html');
-    }
-
 }
+
+  if ($_SESSION['email']) {
+    header('Location: index.php');
+  }
 
 /*if($user == '') {
 	$errmsg_arr[] = 'You must enter your Username';
@@ -40,6 +42,11 @@ if($password == '') {
 <body id="homepage">
   <div class="login-form-container vertical-center">
     <form id="loginform" method="POST" action="login.php">
+        <?php
+        if (isset($error)) {
+          echo $error;
+        }
+        ?>
         <label for="email" required>Login</label>
         <input type="text" name="email" value="" id="email" placeholder="Enter your username or email">
 
