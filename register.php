@@ -1,5 +1,4 @@
-<?php include("inc/library.php");
-      include("inc/header.php");
+<?php include("inc/header.php");
 ?>
 <?php
 $db = connectToDatabase();
@@ -49,5 +48,6 @@ if ($_POST) {
     </form>
   </div>
 
-</body>
-</html>
+
+<?php include("inc/footer.php")
+?>

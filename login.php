@@ -1,5 +1,4 @@
 <?php
-include("inc/library.php");
 include("inc/header.php");
 ?>
 <?php
@@ -25,7 +24,7 @@ if ($_POST) {
     }
 }
 
-  if ($_SESSION['email']) {
+  if (isset($_SESSION['email'])) {
     header('Location: index.php');
   }
 
@@ -59,5 +58,6 @@ if($password == '') {
     <p>Don't have an account? <a href="register.php">Register one</a>!</p>
   </div>
 
-</body>
-</html>
+
+<?php include("inc/footer.php")
+?>

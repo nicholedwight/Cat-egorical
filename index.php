@@ -1,5 +1,5 @@
 <?php include('inc/header.php');
-      include('inc/library.php');
+      
 ?>
 <body id="homepage">
 
@@ -9,8 +9,9 @@
   else:
 ?>
 
-<h2>Hello, <?php echo $_SESSION['username']; ?>!</h2>
-<a href="logout.php" class="small round button">Logout</a>
+
+
+
 
 
 
@@ -18,5 +19,5 @@
 <?php
 endif;
 ?>
-</body>
-</html>
+<?php include("inc/footer.php")
+?>
