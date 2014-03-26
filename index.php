@@ -4,8 +4,8 @@
 
 
 <form id="loginform" method="POST" action="login.php">
-    <label for="userlog" required>Login</label>
-    <input type="text" name="login-info" value="" id="userlog" placeholder="Enter your username or email">
+    <label for="email" required>Login</label>
+    <input type="text" name="email" value="" id="email" placeholder="Enter your username or email">
 
     <label for="password" required>Password</label>
     <input type="text" name="password" value="" id="password" placeholder="Password">
