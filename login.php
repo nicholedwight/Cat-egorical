@@ -5,12 +5,12 @@ if ($_POST) {
     //die(var_dump($_POST));
     $email = $_POST['email'];
     $password = $_POST['password'];
-    $query = "SELECT * FROM `users` WHERE 'email' = '" . $email . "' AND 'password' = '" . $password ."'";
+    $query = "SELECT * FROM `users` WHERE `email` = '" . $email . "' AND `password` = '" . $password ."'";
 
     $statement = $db->prepare($query);
     $statement->execute();
     $result = $statement->fetchAll();
-    die(var_dump($result));
+
     if ($result) {
       header("Location: test.html");
     } else {
