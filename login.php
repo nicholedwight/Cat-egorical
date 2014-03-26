@@ -37,16 +37,20 @@ if($password == '') {
 }
 */
 ?>
+<body id="homepage">
+  <div class="login-form-container vertical-center">
+    <form id="loginform" method="POST" action="login.php">
+        <label for="email" required>Login</label>
+        <input type="text" name="email" value="" id="email" placeholder="Enter your username or email">
 
+        <label for="password" required>Password</label>
+        <input type="text" name="password" value="" id="password" placeholder="Password">
 
-<form id="loginform" method="POST" action="login.php">
-    <label for="email" required>Login</label>
-    <input type="text" name="email" value="" id="email" placeholder="Enter your username or email">
+        <button type="submit" class="small round button">Login</button>
+    </form>
 
-    <label for="password" required>Password</label>
-    <input type="text" name="password" value="" id="password" placeholder="Password">
+    <p>Don't have an account? <a href="register.php">Register one</a>!</p>
+  </div>
 
-    <button type="submit" class="small round button">Login</button>
-</form>
-
-<p>Don't have an account? <a href="register.php">Register one</a>!</p>
+</body>
+</html>

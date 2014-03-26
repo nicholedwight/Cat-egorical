@@ -27,19 +27,27 @@ if ($_POST) {
 
 ?>
 
-<form id="registration" method="POST" action="register.php">
-    <label for="regname" required>Name*</label>
-    <input type="text" name="name" value="" id="regname" placeholder="Your Name">
 
-    <label for="regusername">Username</label>
-    <input type="text" name="username" value="" id="reusername" placeholder="Username">
+<body id="testpage">
 
-    <label for="regemail" required>Email*</label>
-    <input type="text" name="email" value="" id="regemail" placeholder="Your Email">
+  <div class="reg-form-container vertical-center">
+    <form id="registration" method="POST" action="register.php">
+        <label for="regname" required>Name*</label>
+        <input type="text" name="name" value="" id="regname" placeholder="Your Name">
 
-    <label for="regpassword" required>Password*</label>
-    <input type="text" name="password" value="" id="regpassword" placeholder="Password">
+        <label for="regusername">Username</label>
+        <input type="text" name="username" value="" id="reusername" placeholder="Username">
 
-    <button type="submit" class="small round button">Register</button>
+        <label for="regemail" required>Email*</label>
+        <input type="text" name="email" value="" id="regemail" placeholder="Your Email">
 
-</form>
+        <label for="regpassword" required>Password*</label>
+        <input type="text" name="password" value="" id="regpassword" placeholder="Password">
+
+        <button type="submit" class="small round button">Register</button>
+        <a href="login.php" class="small round button">Login</a>
+    </form>
+  </div>
+
+</body>
+</html>

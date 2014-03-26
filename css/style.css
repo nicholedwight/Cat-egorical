@@ -5,7 +5,44 @@
   background-position:center;
 }
 
+#testpage {
+  background: url("../img/testbg.jpg");
+  background-size: cover;
+  background-repeat:no-repeat;
+  background-position:center;
+}
+
 #registration, #loginform {
   width: 500px;
   margin: 0 auto;
+}
+
+/* This only works when on an element with a fixed height. */
+.vertical-center {
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+}
+
+.login-form-container {
+  height: 350px;
+  padding: 50px 0 50px 0;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  width: 600px;
+  text-align: center;
+}
+
+.reg-form-container {
+  height: 450px;
+  padding: 50px 0 50px 0;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  width: 600px;
+  text-align: center;
+}
+
+.login-form-container label, .reg-form-container label {
+  color: #000000;
+  text-align: left;
 }
