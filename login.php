@@ -1,6 +1,10 @@
-<?php include("dbconnect.php") ?>
+<?php
+include("inc/library.php");
+include("inc/header.php");
+?>
 <?php
 $db = connectToDatabase();
+
 if ($_POST) {
     //die(var_dump($_POST));
     $email = $_POST['email'];
@@ -9,13 +13,16 @@ if ($_POST) {
 
     $statement = $db->prepare($query);
     $statement->execute();
-    $result = $statement->fetchAll();
+    $result = $statement->rowCount();
 
-    if ($result) {
-      header("Location: test.html");
-    } else {
-      echo "Boo!";
+    if ( $result > 0) {
+      $_SESSION['email'] = $_POST['email'];
+      header('Location: test.html');
     }
+    else {
+      header('Location: index.html');
+    }
+
 }
 
 /*if($user == '') {
@@ -27,6 +34,17 @@ if($password == '') {
 	$errflag = true;
 }
 */
-
-
 ?>
+
+
+<form id="loginform" method="POST" action="login.php">
+    <label for="email" required>Login</label>
+    <input type="text" name="email" value="" id="email" placeholder="Enter your username or email">
+
+    <label for="password" required>Password</label>
+    <input type="text" name="password" value="" id="password" placeholder="Password">
+
+    <button type="submit" class="small round button">Login</button>
+</form>
+
+<p>Don't have an account? <a href="register.php">Register one</a>!</p>

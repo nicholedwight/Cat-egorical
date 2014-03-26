@@ -1,3 +1,7 @@
+<?php session_start();
+      ob_start();
+?>
+
 <!doctype html>
 <html class="no-js" lang="en">
   <head>
