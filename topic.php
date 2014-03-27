@@ -14,11 +14,16 @@ if ($_GET) {
       </h1>
       <p>
       <?php echo $result['question']; ?>
-      <h3>Asked by <?php echo getUsernameFromId($result['userid']); ?></h3>
+      <h3>Asked by <a href="#"><span class="underline"><?php echo getUsernameFromId($result['userid']); ?></span></a></h3>
       </p>
     </div>
 
-<?php }
+    <?php
+    if (getUsernameFromId($result['userid']) == $_SESSION['username']) { ?>
+        <a href="update.php?id=<?php echo $result['id']; ?>">Edit</a>
+    <?php }
+
+ }
 
 
 include("inc/footer.php");

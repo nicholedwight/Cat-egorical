@@ -33,6 +33,13 @@
   background-position:center;
 }
 
+#updatepage {
+  background: url("../img/updatebg.jpg");
+  background-size: cover;
+  background-repeat:no-repeat;
+  background-position:center;
+}
+
 #registration, #loginform, #questions {
   width: 500px;
   margin: 0 auto;
@@ -80,4 +87,8 @@ table, .center {
 .topic {
   margin: 0 auto;
   width: 500px;
+}
+
+.underline {
+  text-decoration: underline;
 }

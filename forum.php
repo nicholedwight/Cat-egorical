@@ -22,7 +22,7 @@ $db = connectToDatabase();
       <tr>
         <td>Topic</td>
         <td>Question</td>
-        <td>Asker</td>
+        <td>Asked By</td>
       </tr>
     </thead>
     <tbody>
