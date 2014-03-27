@@ -36,13 +36,14 @@
         ?>
       </li>
       <li class="has-dropdown not-click">
-        <a href="index.php">Hello<?php if (isset($_SESSION['email'])) {
+        <a href="profile.php">Hello<?php if (isset($_SESSION['email'])) {
                                         echo ", " . $_SESSION['username'];
                                       }?>!</a></h1>
         <ul class="dropdown">
           <li class="title back js-generated">
             <h5><a href="javascript:void(0)">Back</a></h5>
           </li>
+          <li><a href="profile.php?id=<?php echo getUserId($_SESSION['email']); ?>">My Profile</a></li>
           <li>
               <a href="userdetails.php?id=<?php echo getUserId($_SESSION['email']); ?>">My Details</a><li>
           <li><a href="#">My Questions</a></li>

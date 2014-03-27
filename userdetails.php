@@ -28,15 +28,16 @@ if ($_POST) {
       $query .= " WHERE `id` = '"    . $id . "'";
 
   $statement = $db->prepare($query, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
-  $statement->execute(array(':name' => $_POST['name']));
-
-  if ($statement->errorCode() == 0) {
-    echo "Details have been saved!";
-  } else {
-    $errors = $statement->errorInfo();
-    echo($errors[2]);
-  }
-}
+  $statement->execute(array(':name' => $_POST['name'])); ?>
+  <div class="user-response">
+    <?php if ($statement->errorCode() == 0) {
+      echo "Details have been saved!";
+    } else {
+      $errors = $statement->errorInfo();
+      echo($errors[2]);
+    } ?>
+  </div>
+<?php }
 
 
 if ($_GET):

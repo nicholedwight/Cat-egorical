@@ -38,7 +38,9 @@ $db = connectToDatabase();
             <?php echo $row['question']; ?>
           </td>
           <td>
-            <?php echo getUsernameFromId($row['userid']); ?>
+            <a href="profile.php?id=<?php echo $row['userid']; ?>">
+              <?php echo getUsernameFromId($row['userid']); ?>
+            </a>
           </td>
         </tr>
     <?php endforeach;

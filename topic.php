@@ -14,7 +14,7 @@ if ($_GET) {
       </h1>
       <p>
       <?php echo $result['question']; ?>
-      <h3>Asked by <a href="#"><span class="underline"><?php echo getUsernameFromId($result['userid']); ?></span></a></h3>
+      <h3>Asked by <a href="profile.php?id=<?php echo $result['userid']; ?>"><span class="underline"><?php echo getUsernameFromId($result['userid']); ?></span></a></h3>
       </p>
     <?php if (getUsernameFromId($result['userid']) == $_SESSION['username']) { ?>
         <a href="update.php?id=<?php echo $result['id']; ?>" class="small round button">Edit</a>

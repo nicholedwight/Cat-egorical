@@ -32,6 +32,10 @@ body {
   background-image: url("../img/detailsbg.jpg");
 }
 
+#profile {
+  background-image: url("../img/profilebg.jpg");
+}
+
 #registration, #loginform, #questions, #userinfo {
   width: 500px;
   margin: 0 auto;
@@ -108,4 +112,28 @@ table, .center {
   width: 400px;
   position: relative;
   z-index: 5;
+}
+
+.user-response {
+  margin: 0 auto;
+  margin-top: 30px;
+  color: #FFF;
+  font-size: 20px;
+  text-align: center;
+  width: 400px;
+  position: relative;
+}
+
+.profile-info h1, h2, h3, h4, h5, h6 {
+  color: #FFF;
+}
+
+.profile-info {
+  margin: 0 auto;
+  margin-top: 50px;
+  width: 700px;
+  border: solid white 2px;
+  border-radius: 5px;
+  padding: 10px;
+  color: #FFF;
 }
