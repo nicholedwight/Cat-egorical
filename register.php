@@ -6,7 +6,7 @@ if ($_POST) {
     $name = $_POST['name'];
     $username = $_POST['username'];
     $email = $_POST['email'];
-    $password = $_POST['password'];
+    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
     $query = "INSERT INTO `users` (`name`, `username`, `email`, `password`, `created_at`)
               VALUES ('" . $name . "',
                       '" . $username . "',
@@ -14,31 +14,16 @@ if ($_POST) {
                       '" . $password . "',
                       '" . date('Y-m-d', time()) . "')";
   $statement = $db->prepare($query);
-  $statement->execute();
-
-  if ($statement->errorCode() == 0) {
+  $statement->execute(); ?>
+  <div class="response">
+  <?php  if ($statement->errorCode() == 0) {
     echo "Thanks! Your registration was successful!";
-  } else {
+    } else {
     $errors = $statement->errorInfo();
-    echo($errors[2]);
-  }
-
-if($name == '') {
-  $errmsg_arr[] = 'You must enter your Name';
-  $errflag = true;
-}
-if($username == '') {
-  $errmsg_arr[] = 'You must enter your Username';
-  $errflag = true;
-}
-if($password == '') {
-  $errmsg_arr[] = 'You must enter your Password';
-  $errflag = true;
-}
-if($email == '') {
-  $errmsg_arr[] = 'You must enter your Email';
-  $errflag = true;
-}
+    echo "Sorry! That email is already in use!";
+  } ?>
+  </div>
+  <?php
 }
 
 ?>

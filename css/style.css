@@ -92,3 +92,14 @@ table, .center {
 .underline {
   text-decoration: underline;
 }
+
+.response {
+  margin: 0 auto;
+  margin-top: 90px;
+  color: #000;
+  font-size: 20px;
+  text-align: center;
+  width: 400px;
+  position: relative;
+  z-index: 5;
+}
