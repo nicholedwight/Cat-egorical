@@ -30,7 +30,9 @@ $db = connectToDatabase();
       foreach( $result as $row ):?>
         <tr>
           <td>
+            <a href="topic.php?id=<?php echo $row['id']; ?>">
             <?php echo $row['subject']; ?>
+            </a>
           </td>
           <td>
             <?php echo $row['question']; ?>
