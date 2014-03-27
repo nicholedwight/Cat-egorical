@@ -18,11 +18,12 @@ if ($_GET) {
       </p>
     <?php if (getUsernameFromId($result['userid']) == $_SESSION['username']) { ?>
         <a href="update.php?id=<?php echo $result['id']; ?>" class="small round button">Edit</a>
+        <?php } ?>
         <a href="forum.php" class="small round button">Back</a>
       </div>
-    <?php }
 
- }
+
+ <?php }
 
 
 include("inc/footer.php");
