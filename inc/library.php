@@ -30,4 +30,13 @@ function getUsernameFromId($id) {
   return $result['username'];
 }
 
+function getUserId($email) {
+  $db = connectToDatabase();
+  $query = "SELECT `id` FROM `users` WHERE `email` = '" . $email . "'";
+  $statement = $db->prepare($query);
+  $statement->execute();
+  $result = $statement->fetch(PDO::FETCH_ASSOC);
+  return $result['id'];
+}
+
 ?>

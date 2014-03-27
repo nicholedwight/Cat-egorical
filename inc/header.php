@@ -43,8 +43,9 @@
           <li class="title back js-generated">
             <h5><a href="javascript:void(0)">Back</a></h5>
           </li>
-          <li><a href="#">Your Details</a><li>
-          <li><a href="#">Your Questions</a></li>
+          <li>
+              <a href="userdetails.php?id=<?php echo getUserId($_SESSION['email']); ?>">My Details</a><li>
+          <li><a href="#">My Questions</a></li>
         </ul>
       </li>
     </ul>

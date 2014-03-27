@@ -8,12 +8,7 @@
     header('Location: login.php');
   else:
 ?>
-
-
 <a href="submission.php" class="small round button">Ask A Question!</a>
-
-
-
 
 
 <?php

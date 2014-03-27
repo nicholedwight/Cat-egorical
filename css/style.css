@@ -1,46 +1,38 @@
-#homepage {
-  background: url("../img/homebg.jpg");
+body {
   background-size: cover;
   background-repeat:no-repeat;
   background-position:center;
+}
+
+#homepage {
+  background-image: url("../img/homebg.jpg");
 }
 
 #loginpage {
-  background: url("../img/loginbg.jpg");
-  background-size: cover;
-  background-repeat:no-repeat;
-  background-position:center;
+  background-image: url("../img/loginbg.jpg");
 }
 
 #testpage {
-  background: url("../img/testbg.jpg");
-  background-size: cover;
-  background-repeat:no-repeat;
-  background-position:center;
+  background-image: url("../img/testbg.jpg");
 }
 
 #subpage {
-  background: url("../img/submissionbg.jpg");
-  background-size: cover;
-  background-repeat:no-repeat;
-  background-position:center;
+  background-image: url("../img/submissionbg.jpg");
 }
 
 #forumpage {
-  background: url("../img/forumbg.jpg");
-  background-size: cover;
-  background-repeat:no-repeat;
-  background-position:center;
+  background-image: url("../img/forumbg.jpg");
 }
 
 #updatepage {
-  background: url("../img/updatebg.jpg");
-  background-size: cover;
-  background-repeat:no-repeat;
-  background-position:center;
+  background-image: url("../img/updatebg.jpg");
 }
 
-#registration, #loginform, #questions {
+#userpage {
+  background-image: url("../img/detailsbg.jpg");
+}
+
+#registration, #loginform, #questions, #userinfo {
   width: 500px;
   margin: 0 auto;
 }
@@ -69,6 +61,20 @@
   text-align: center;
 }
 
+.user-form-container {
+  margin-top: 100px;
+  width: 600px;
+  text-align: center;
+}
+
+.user-form-container h1 {
+  color: #FFF;
+}
+
+.user-form-container label {
+  color: #FFF;
+  text-align: left;
+}
 
 .login-form-container label, .reg-form-container label {
   color: #000000;
