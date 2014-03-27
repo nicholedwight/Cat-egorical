@@ -14,23 +14,36 @@ $db = connectToDatabase();
     $statement->execute();
     $row_count = $statement->rowCount();
     $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+
 ?>
 <div class="forum">
   <table>
-<?php
-    foreach( $result as $row ) {
-      echo "<thead><tr><th width='400'>" . $row['subject'] . "</th></tr></thead>";
-      echo "<tbody><tr><td>" . $row['question'] . "</td></tr>";
-      echo "<tr><td>" . $row['answer'] . "</td></tr></tbody>";
-    }
-
-?>
+    <thead>
+      <tr>
+        <td>Topic</td>
+        <td>Question</td>
+        <td>Asker</td>
+      </tr>
+    </thead>
+    <tbody>
+      <?php
+      foreach( $result as $row ):?>
+        <tr>
+          <td>
+            <?php echo $row['subject']; ?>
+          </td>
+          <td>
+            <?php echo $row['question']; ?>
+          </td>
+          <td>
+            <?php echo getUsernameFromId($row['userid']); ?>
+          </td>
+        </tr>
+    <?php endforeach;
+      ?>
+    </tbody>
   </table>
 </div>
-
-
-
-
 
 <?php
 endif;

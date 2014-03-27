@@ -18,6 +18,7 @@ if ($_POST) {
     if ( $row_count > 0) {
       $_SESSION['email'] = $_POST['email'];
       $_SESSION['username'] = $result['username'];
+      $_SESSION['userid'] = $result['id'];
       header('Location: test.html');
     } else {
       $error = "Your login details are incorrect.";

@@ -11,10 +11,12 @@ $db = connectToDatabase();
 if ($_POST) {
     $subject = $_POST['subject'];
     $question = $_POST['question'];
-    $query = "INSERT INTO `questions` (`subject`, `question`, `created_at`)
+    $userid = $_SESSION['userid'];
+    $query = "INSERT INTO `questions` (`subject`, `question`, `created_at`, `userid`)
               VALUES ('" . $subject . "',
                       '" . $question . "',
-                      '" . date('Y-m-d', time()) . "')";
+                      '" . date('Y-m-d', time()) . "',
+                      '" . $userid . "')";
   $statement = $db->prepare($query);
   $statement->execute();
 

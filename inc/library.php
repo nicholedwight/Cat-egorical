@@ -21,4 +21,13 @@ function isLoggedIn() {
   }
 }
 
+function getUsernameFromId($id) {
+  $db = connectToDatabase();
+  $username = "SELECT `username` FROM `users` WHERE `id` = $id";
+  $statement = $db->prepare($username);
+  $statement->execute();
+  $result = $statement->fetch(PDO::FETCH_ASSOC);
+  return $result['username'];
+}
+
 ?>
