@@ -41,7 +41,7 @@ if ($_POST) {
     <button type="submit" class="small round button">Submit!</button>
   </form>
 
-  <p>Want to see what others are talking about? Head over to the <a href="forum">Forum</a> now!</p>
+  <p>Want to see what others are talking about? Head over to the <a href="forum.php">Forum</a> now!</p>
 </div>
 
 <?php

@@ -38,7 +38,7 @@ if($password == '') {
 }
 */
 ?>
-<body id="homepage">
+<body id="loginpage">
   <div class="login-form-container vertical-center">
     <form id="loginform" method="POST" action="login.php">
         <?php

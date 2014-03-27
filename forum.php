@@ -13,12 +13,12 @@ $db = connectToDatabase();
     $statement = $db->prepare($query);
     $statement->execute();
     $row_count = $statement->rowCount();
-    $result = $statement->fetch(PDO::FETCH_ASSOC);
+    $result = $statement->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <div class="forum">
   <table>
 <?php
-    foreach( $statement as $row ) {
+    foreach( $result as $row ) {
       echo "<thead><tr><th width='400'>" . $row['subject'] . "</th></tr></thead>";
       echo "<tbody><tr><td>" . $row['question'] . "</td></tr>";
       echo "<tr><td>" . $row['answer'] . "</td></tr></tbody>";

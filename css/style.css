@@ -1,4 +1,11 @@
 #homepage {
+  background: url("../img/homebg.jpg");
+  background-size: cover;
+  background-repeat:no-repeat;
+  background-position:center;
+}
+
+#loginpage {
   background: url("../img/loginbg.jpg");
   background-size: cover;
   background-repeat:no-repeat;
