@@ -1,5 +1,5 @@
 <?php include('inc/header.php');
-      
+
 ?>
 <body id="homepage">
 
@@ -10,7 +10,7 @@
 ?>
 
 
-
+<a href="submission.php" class="small round button">Ask A Question!</a>
 
 
 

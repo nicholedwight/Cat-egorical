@@ -12,7 +12,14 @@
   background-position:center;
 }
 
-#registration, #loginform {
+#subpage {
+  background: url("../img/submissionbg.jpg");
+  background-size: cover;
+  background-repeat:no-repeat;
+  background-position:center;
+}
+
+#registration, #loginform, #questions {
   width: 500px;
   margin: 0 auto;
 }
@@ -41,6 +48,7 @@
   width: 600px;
   text-align: center;
 }
+
 
 .login-form-container label, .reg-form-container label {
   color: #000000;

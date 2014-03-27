@@ -16,7 +16,7 @@
 <nav class="top-bar" data-topbar="">
   <ul class="title-area">
     <li class="name">
-      <h1><a href="#">Hello<?php if (isset($_SESSION['email'])) {
+      <h1><a href="index.php">Hello<?php if (isset($_SESSION['email'])) {
                                       echo ", " . $_SESSION['username'];
                                     }?>!</a></h1>
     </li>
@@ -43,8 +43,8 @@
           <li class="title back js-generated">
             <h5><a href="javascript:void(0)">Back</a></h5>
           </li>
-          <li><a href="#">Button</a><li>
-          </li>
+          <li><a href="#">Your Details</a><li>
+          <li><a href="#">Your Questions</a></li>
         </ul>
       </li>
     </ul>
@@ -66,7 +66,7 @@
 
     <!-- Left Nav Section -->
     <ul class="left show-for-large-up">
-      <li><a href="index.php">Home</a>
+      <li><a href="forum.php">Forum</a>
       </li>
     </ul>
   </section>
