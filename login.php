@@ -7,22 +7,24 @@ $db = connectToDatabase();
 if ($_POST) {
     //die(var_dump($_POST));
     $email = $_POST['email'];
-    $password = $_POST['password'];
-    $query = "SELECT * FROM `users` WHERE `email` = '" . $email . "' AND `password` = '" . $password ."'";
+    $query = "SELECT * FROM `users` WHERE `email` = '" . $email . "'";
 
     $statement = $db->prepare($query);
     $statement->execute();
     $row_count = $statement->rowCount();
     $result = $statement->fetch(PDO::FETCH_ASSOC);
 
+
     if ( $row_count > 0) {
-      $_SESSION['email'] = $_POST['email'];
-      $_SESSION['username'] = $result['username'];
-      $_SESSION['userid'] = $result['id'];
-      header('Location: test.html');
-    } else {
-      $error = "Your login details are incorrect.";
+      if (password_verify($_POST['password'], $result['password'])) {
+        $_SESSION['email'] = $_POST['email'];
+        $_SESSION['username'] = $result['username'];
+        $_SESSION['userid'] = $result['id'];
+        header('Location: index.php');
+      } else {
+        $error = "Your login details are incorrect.";
     }
+  }
 }
 
   if (isset($_SESSION['email'])) {
