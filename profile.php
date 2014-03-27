@@ -18,6 +18,9 @@ if ($_GET):
       <p>
         <?php echo $result['country'] ?>
       </p>
+      <p>
+        See all questions asked by <?php echo $result['username']; ?> <a href="userquestions.php?id=<?php echo $result['id']; ?>">here</a>!
+      </p>
     </div>
 
 <?php endif;

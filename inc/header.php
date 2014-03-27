@@ -46,7 +46,7 @@
           <li><a href="profile.php?id=<?php echo getUserId($_SESSION['email']); ?>">My Profile</a></li>
           <li>
               <a href="userdetails.php?id=<?php echo getUserId($_SESSION['email']); ?>">My Details</a><li>
-          <li><a href="#">My Questions</a></li>
+          <li><a href="userquestions.php?id=<?php echo getUserId($_SESSION['email']); ?>">My Questions</a></li>
         </ul>
       </li>
     </ul>
