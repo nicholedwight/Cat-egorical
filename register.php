@@ -58,7 +58,7 @@ if($email == '') {
         <input type="text" name="email" value="" id="regemail" placeholder="Your Email" required>
 
         <label for="regpassword">Password</label>
-        <input type="text" name="password" value="" id="regpassword" placeholder="Password" required>
+        <input type="password" name="password" value="" id="regpassword" placeholder="Password" required>
 
         <button type="submit" class="small round button">Register</button>
     </form>
