@@ -12,17 +12,20 @@ if ($_GET):
       <h1>
         <?php echo $result['username']; ?>
       </h1>
-      <p>
+      <?php
+      if (getUsernameFromId($result['id']) == $_SESSION['username']) { ?>
+        <a href="userdetails.php?id=<?php echo getUserId($_SESSION['email']); ?>" class="small round button edit">Edit Profile</a>
+      <?php } ?>
+      <p><span class="profilespec">About <?php echo $result['username']; ?>:</span>
         <?php echo $result['bio']; ?>
       </p>
-      <p>
+      <p><span class="profilespec">Lives in:</span>
         <?php echo $result['country'] ?>
       </p>
       <p>
         See all questions asked by <?php echo $result['username']; ?> <a href="userquestions.php?id=<?php echo $result['id']; ?>">here</a>!
       </p>
     </div>
-
 <?php endif;
 
 

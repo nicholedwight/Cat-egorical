@@ -17,7 +17,7 @@ if ($_POST) {
     ", `username` = '"   . $_POST['username'] .
     "', `email` = '"      . $_POST['email'] . "'";
     if (isset($bio)) {
-      $query .= ", `bio` = '" . $bio . "'";
+      $query .= ", `bio` =  :bio";
     }
     if (isset($country)) {
       $query .= ", `country` = '" . $country ."'";
@@ -28,7 +28,7 @@ if ($_POST) {
       $query .= " WHERE `id` = '"    . $id . "'";
 
   $statement = $db->prepare($query, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
-  $statement->execute(array(':name' => $_POST['name'])); ?>
+  $statement->execute(array(':name' => $_POST['name'], ':bio' => $_POST['bio'])); ?>
   <div class="user-response">
     <?php if ($statement->errorCode() == 0) {
       echo "Details have been saved!";

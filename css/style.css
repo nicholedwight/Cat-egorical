@@ -136,4 +136,15 @@ table, .center {
   border-radius: 5px;
   padding: 10px;
   color: #FFF;
+  text-shadow: 1px 1px #000;
+}
+
+.profilespec {
+  font-size: 20px;
+  text-decoration: underline;
+}
+
+.edit {
+  float: right;
+  margin-top: -70px;
 }
