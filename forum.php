@@ -4,7 +4,7 @@
     header('Location: login.php');
   else:
 ?>
-
+<body id="forumpage">
 <?php
 $db = connectToDatabase();
 

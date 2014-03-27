@@ -19,6 +19,13 @@
   background-position:center;
 }
 
+#forumpage {
+  background: url("../img/forumbg.jpg");
+  background-size: cover;
+  background-repeat:no-repeat;
+  background-position:center;
+}
+
 #registration, #loginform, #questions {
   width: 500px;
   margin: 0 auto;

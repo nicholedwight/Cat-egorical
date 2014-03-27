@@ -16,9 +16,7 @@
 <nav class="top-bar" data-topbar="">
   <ul class="title-area">
     <li class="name">
-      <h1><a href="index.php">Hello<?php if (isset($_SESSION['email'])) {
-                                      echo ", " . $_SESSION['username'];
-                                    }?>!</a></h1>
+      <h1><a href="index.php">Cat-egorical</a></h1>
     </li>
     <li class="toggle-topbar menu-icon"><a href="#">Menu</a>
     </li>
@@ -38,7 +36,9 @@
         ?>
       </li>
       <li class="has-dropdown not-click">
-        <a href="#">Right Button Dropdown</a>
+        <a href="index.php">Hello<?php if (isset($_SESSION['email'])) {
+                                        echo ", " . $_SESSION['username'];
+                                      }?>!</a></h1>
         <ul class="dropdown">
           <li class="title back js-generated">
             <h5><a href="javascript:void(0)">Back</a></h5>

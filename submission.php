@@ -36,7 +36,7 @@ if ($_POST) {
     <input type="text" name="subject" value="" id="subject" placeholder="Subject">
 
     <label for="question" required>Question</label>
-    <textarea name="question" id="question" rows="6" placeholder="Enter you Cat-y questions here!"></textarea>
+    <textarea name="question" id="question" rows="6" placeholder="Enter your Cat-y questions here!"></textarea>
 
     <button type="submit" class="small round button">Submit!</button>
   </form>
