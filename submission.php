@@ -1,5 +1,12 @@
 <?php include("inc/header.php") ?>
 <?php
+  if (isLoggedIn() != true):
+    header('Location: login.php');
+  else:
+
+?>
+
+<?php
 $db = connectToDatabase();
 if ($_POST) {
     $subject = $_POST['subject'];
@@ -37,4 +44,6 @@ if ($_POST) {
   <p>Want to see what others are talking about? Head over to the <a href="forum">Forum</a> now!</p>
 </div>
 
-<?php include("inc/footer.php") ?>
+<?php
+endif;
+include("inc/footer.php") ?>
