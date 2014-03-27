@@ -16,11 +16,10 @@ if ($_GET) {
       <?php echo $result['question']; ?>
       <h3>Asked by <a href="#"><span class="underline"><?php echo getUsernameFromId($result['userid']); ?></span></a></h3>
       </p>
-    </div>
-
-    <?php
-    if (getUsernameFromId($result['userid']) == $_SESSION['username']) { ?>
-        <a href="update.php?id=<?php echo $result['id']; ?>">Edit</a>
+    <?php if (getUsernameFromId($result['userid']) == $_SESSION['username']) { ?>
+        <a href="update.php?id=<?php echo $result['id']; ?>" class="small round button">Edit</a>
+        <a href="forum.php" class="small round button">Back</a>
+      </div>
     <?php }
 
  }
