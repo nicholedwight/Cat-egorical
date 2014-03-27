@@ -9,13 +9,10 @@ $db = connectToDatabase();
     $row_count = $statement->rowCount();
     $result = $statement->fetch(PDO::FETCH_ASSOC);
     
-    if ( $row_count > 0) {
-      $topic = $result['subject'];
-      echo $topic;
-      $qbody = $result['question'];
-      echo $qbody;
-    } else {
-      echo "You suck.";
+    foreach( $statement as $row ) {
+      var_dump($row);
+      echo "<table><thead><tr><th width='400'>" . $row['subject'] . "</th></tr></thead>";
+      echo "<tbody><tr><td>" . $row['question'] . "</td></tr></tbody></table>";
     }
 
 ?>

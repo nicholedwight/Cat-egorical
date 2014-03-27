@@ -66,8 +66,8 @@
 
     <!-- Left Nav Section -->
     <ul class="left show-for-large-up">
-      <li><a href="forum.php">Forum</a>
-      </li>
+      <li><a href="forum.php">Forum</a></li>
+      <li><a href="submission.php">Ask</a></li>
     </ul>
   </section>
 </nav>
