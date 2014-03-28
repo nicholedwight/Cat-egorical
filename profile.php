@@ -23,6 +23,10 @@ if ($_GET):
         <?php echo $result['country'] ?>
       </p>
       <p>
+        <span class="profilespec">Member since:</span>
+        <?php echo $result['created_at']; ?>
+      </p>
+      <p>
         See all questions asked by <?php echo $result['username']; ?> <a href="userquestions.php?id=<?php echo $result['id']; ?>">here</a>!
       </p>
     </div>
