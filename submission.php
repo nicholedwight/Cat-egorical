@@ -35,10 +35,10 @@ if ($_POST) {
 <div class="reg-form-container vertical-center">
   <form id="questions" method="POST">
     <label for="subject" required>Subject</label>
-    <input type="text" name="subject" value="" id="subject" placeholder="Subject">
+    <input type="text" name="subject" value="" id="subject" placeholder="Subject" required>
 
     <label for="question" required>Question</label>
-    <textarea name="question" id="question" rows="6" placeholder="Enter your Cat-y questions here!"></textarea>
+    <textarea name="question" id="question" rows="6" placeholder="Enter your Cat-y questions here!" required></textarea>
 
     <button type="submit" class="small round button">Submit!</button>
   </form>
