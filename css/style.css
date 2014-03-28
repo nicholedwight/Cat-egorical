@@ -36,6 +36,10 @@ body {
   background-image: url("../img/profilebg.jpg");
 }
 
+#topic {
+  background-image: url("../img/topicbg.jpg");
+}
+
 #registration, #loginform, #questions, #userinfo {
   width: 500px;
   margin: 0 auto;
