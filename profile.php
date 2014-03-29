@@ -15,6 +15,7 @@ if ($_GET):
       <?php
       if (getUsernameFromId($result['id']) == $_SESSION['username']) { ?>
         <a href="userdetails.php?id=<?php echo getUserId($_SESSION['email']); ?>" class="small round button edit">Edit Profile</a>
+        <a href="#">Delete Account</a>
       <?php } ?>
       <p><span class="profilespec">About <?php echo $result['username']; ?>:</span>
         <?php echo $result['bio']; ?>
