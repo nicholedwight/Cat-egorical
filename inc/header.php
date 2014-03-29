@@ -1,6 +1,7 @@
 <?php session_start();
       ob_start();
       include('library.php');
+      require('vendor/autoload.php');
 ?>
 
 <!doctype html>

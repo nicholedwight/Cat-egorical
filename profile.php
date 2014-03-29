@@ -1,4 +1,6 @@
-<?php include("inc/header.php"); ?>
+<?php
+use forxer\Gravatar\Gravatar;
+include("inc/header.php"); ?>
 <body id="profile">
 <?php
 if ($_GET):
@@ -12,7 +14,13 @@ if ($_GET):
       <h1>
         <?php echo $result['username']; ?>
       </h1>
-      <?php
+      <?php if (getUsernameFromId($result['id']) == $_SESSION['username']) { ?>
+      <img src="
+      <?php echo Gravatar::image($_SESSION['email'], null, "retro"); ?>">
+      <?php } else { ?>
+        <img src="
+        <?php echo Gravatar::image($result['email'], null, "retro"); ?>">
+      <?php }
       if (getUsernameFromId($result['id']) == $_SESSION['username']) { ?>
         <a href="userdetails.php?id=<?php echo getUserId($_SESSION['email']); ?>" class="small round button edit">Edit Profile</a>
         <a href="#">Delete Account</a>
