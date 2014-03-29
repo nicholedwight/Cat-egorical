@@ -68,8 +68,10 @@
 
     <!-- Left Nav Section -->
     <ul class="left show-for-large-up">
+      <?php if (isset($_SESSION['email'])) {?>
       <li><a href="forum.php">Forum</a></li>
       <li><a href="submission.php">Ask</a></li>
+      <?php } ?>
     </ul>
   </section>
 </nav>
