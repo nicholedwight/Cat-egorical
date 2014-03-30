@@ -34,7 +34,7 @@ $db = connectToDatabase();
             <?php echo $row['subject']; ?>
             </a>
           </td>
-          <td>
+          <td width = 400px>
             <?php echo $row['question']; ?>
           </td>
           <td>

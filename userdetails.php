@@ -47,6 +47,7 @@ if ($_GET):
     $statement->execute();
     $result = $statement->fetch(PDO::FETCH_ASSOC); ?>
 
+
 <body id="userpage">
   <div class="user-form-container vertical-center">
     <h1>Update your information</h1>
@@ -61,11 +62,12 @@ if ($_GET):
       <input type="text" name="email" value="<?php echo $result['email']; ?>" id="regemail" placeholder="Your Email" required>
 
       <label for="bio">About You</label>
-      <textarea name="bio" id="bio" rows="6" placeholder="Tell us a bit about yourself!"><?php if ($result['bio']) {
+      <textarea name="bio" id="bio" rows="6" wrap="hard" placeholder="Tell us a bit about yourself!"><?php if ($result['bio']) {
                       echo $result['bio']; } ?></textarea>
 
       <label for="country">Country</label>
-      <input type="text" name="country" id="country" placeholder="Where do you live?">
+      <input type="text" name="country" id="country" placeholder="Where do you live?" value="<?php if ($result['country']) {
+                      echo $result['country']; } ?>">
 
       <label for="regpassword">Password</label>
       <input type="password" name="password" value="" id="regpassword" placeholder="Enter a new password">

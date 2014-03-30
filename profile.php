@@ -10,6 +10,7 @@ if ($_GET):
     $statement = $db->prepare($query);
     $statement->execute();
     $result = $statement->fetch(PDO::FETCH_ASSOC); ?>
+
     <div class="profile-info">
       <h1>
         <?php echo $result['username']; ?>
@@ -23,13 +24,13 @@ if ($_GET):
       <?php }
       if (getUsernameFromId($result['id']) == $_SESSION['username']) { ?>
         <a href="userdetails.php?id=<?php echo getUserId($_SESSION['email']); ?>" class="small round button edit">Edit Profile</a>
-        <a href="#">Delete Account</a>
+        <a href="#" class="delete">Delete Account</a>
       <?php } ?>
       <p><span class="profilespec">About <?php echo $result['username']; ?>:</span>
         <?php echo $result['bio']; ?>
       </p>
       <p><span class="profilespec">Lives in:</span>
-        <?php echo $result['country'] ?>
+        <?php echo $result['country']; ?>
       </p>
       <p>
         <span class="profilespec">Member since:</span>

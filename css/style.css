@@ -152,3 +152,9 @@ table, .center {
   float: right;
   margin-top: -70px;
 }
+
+.delete {
+  float: right;
+  margin-top: -20px;
+  margin-right: 5px;
+}
