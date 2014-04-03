@@ -41,11 +41,15 @@ if ($_POST) {
 
 
 if ($_GET):
-    $user = $_GET['id'];
-    $query = "SELECT * FROM `users` WHERE `id` = $user";
+    $userid = $_GET['id'];
+    $query = "SELECT * FROM `users` WHERE `id` = $userid";
     $statement = $db->prepare($query);
     $statement->execute();
-    $result = $statement->fetch(PDO::FETCH_ASSOC); ?>
+    $result = $statement->fetch(PDO::FETCH_ASSOC);
+    if ($userid != $_SESSION['userid']) {
+      header('Location: forum.php');
+    }
+    ?>
 
 
 <body id="userpage">
