@@ -9,11 +9,13 @@ if ($_GET):
     $query = "DELETE FROM `users` WHERE `id` = $user";
     $statement = $db->prepare($query);
     $statement->execute();
-    $result = $statement->fetch(PDO::FETCH_ASSOC); ?>
+    $result = $statement->fetch(PDO::FETCH_ASSOC);
+    ?>
 
 <div class="response">
 <?php  if ($statement->errorCode() == 0) {
-  echo "Your account has successfully been deleted!";
+  session_destroy();
+  header("Location: login.php");
   } else {
   $errors = $statement->errorInfo();
   echo "Sorry, something messed up! Try again!";
