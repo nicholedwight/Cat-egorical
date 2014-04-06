@@ -6,12 +6,12 @@ if ($_POST) {
   $userid = $_SESSION['userid'];
   $questionid = $_POST['questionid'];
   $query = "INSERT INTO `answers` (`answer`, `userid`, `created_at`, `questionid`)
-                        VALUES ('" . $answer . "',
+                        VALUES (     :answer,
                                 '" . $userid . "',
                                 '" . date('Y-m-d', time()) . "',
                                 '" . $questionid . "')";
       $statement = $db->prepare($query);
-      $statement->execute();
+      $statement->execute(array(":answer" => $answer));
 
       if ($statement->errorCode() == 0) {
         header("Location: topic.php?id=" . $_SESSION['topicId']);

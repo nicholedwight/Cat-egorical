@@ -13,12 +13,22 @@ if ($_POST) {
     $question = $_POST['question'];
     $userid = $_SESSION['userid'];
     $query = "INSERT INTO `questions` (`subject`, `question`, `created_at`, `userid`)
-              VALUES ('" . $subject . "',
-                      '" . $question . "',
+              VALUES (    :subject,
+                          :question,
                       '" . date('Y-m-d', time()) . "',
                       '" . $userid . "')";
   $statement = $db->prepare($query);
-  $statement->execute();
+  $statement->execute(array(":question" => $question, ":subject" => $subject)); ?>
+  <div class="response"> <?php
+  if ($statement->errorCode() == 0) {
+    echo "Thanks!";
+  } else {
+    $errors = $statement->errorInfo();
+    echo($errors[2]);
+  } ?>
+  </div>
+  <?php
+
 
   $questionid = $db->lastInsertId();
   $catquery = "INSERT INTO `questions_have_categories` (`category_id`, `question_id`)
@@ -37,12 +47,6 @@ if ($_POST) {
   $catstatement = $db->prepare($catquery);
   $catstatement->execute();
 
-  if ($catstatement->errorCode() == 0) {
-    echo "Yay!";
-  } else {
-    $errors = $catstatement->errorInfo();
-    echo($errors[2]);
-  }
 }
 
   $getcatquery = "SELECT * FROM `categories`";

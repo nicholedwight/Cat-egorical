@@ -5,10 +5,10 @@ if ($_POST) {
     $subject = $_POST['subject'];
     $question = $_POST['question'];
     $id = $_GET['id'];
-    $query = "UPDATE `questions` SET `subject` = '". $_POST['subject'] . "', `question` = '" . $_POST['question'] . "' WHERE `id` = '" . $id . "'";
+    $query = "UPDATE `questions` SET `subject` = :subject, `question` = :question WHERE `id` = '" . $id . "'";
 
   $statement = $db->prepare($query);
-  $statement->execute();
+  $statement->execute(array(":subject" => $subject, ":question" => $question));
 
   if ($statement->errorCode() == 0) {
     echo "Thanks! Your questions was recieved successfully!";

@@ -55,7 +55,8 @@ if ($_GET) {
         <div id="answers">
             <?php if (empty($answerresult)) {
               echo "No one has answered this question yet!";
-            } else foreach( $answerresult as $row ): ?>
+            } else foreach( $answerresult as $row ):
+              echo $row['answer']; ?>
           <p>
           </p>
           <p>Answered by:

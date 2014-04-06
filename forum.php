@@ -37,41 +37,26 @@ $db = connectToDatabase();
         <li><a href="forum.php">See all</a></li>
       </ul>
     </div>
-    <div class="forum">
-      <table>
-        <thead>
-          <tr>
-            <td>Topic</td>
-            <td>Question</td>
-            <td>Asked By</td>
-          </tr>
-        </thead>
-        <tbody>
+    <div class="forum-wrapper">
           <?php
           foreach( $result as $row ):?>
-            <tr>
-              <td>
-                <a href="topic.php?id=<?php echo $row['id']; ?>">
-                <?php echo $row['subject']; ?>
-                </a>
-              </td>
-              <td width = 300px>
+          <div class="forum">
+            <h2><a href="topic.php?id=<?php echo $row['id']; ?>">
+                <?php echo $row['subject']; ?></a></h2>
+              <p>
                 <?php echo $row['question']; ?>
-              </td>
-              <td>
+              </p>
+              <p>Asked by:
                 <?php if (isDeletedUser($row['userid'])) {
                   echo getUsernameFromId($row['userid']);
                 } else { ?>
                 <a href="profile.php?id=<?php echo $row['userid']; ?>">
                   <?php echo getUsernameFromId($row['userid']);
                 }?>
-                </a>
-              </td>
-            </tr>
-        <?php endforeach;
-          ?>
-        </tbody>
-      </table>
+              </a> on <?php echo $row['created_at']; ?>
+              </p>
+          </div>
+        <?php endforeach; ?>
     </div>
 </div>
 
