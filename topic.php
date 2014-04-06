@@ -12,19 +12,23 @@ if ($_GET) {
     $result = $statement->fetch(PDO::FETCH_ASSOC); ?>
     <body id="topic">
     <div class="profile-info">
-      <h1>
-      <?php echo $result['subject']; ?>
-      </h1>
+      <div id="button-wrapper">
+          <h1>
+          <?php echo $result['subject']; ?>
+          </h1>
+          <div id="topic-buttons">
+            <?php if (getUsernameFromId($result['userid']) == $_SESSION['username']) { ?>
+                <a href="update.php?id=<?php echo $result['id']; ?>" class="small round button">Edit</a>
+                <?php } ?>
+                <a href="forum.php" class="small round button">Back</a>
+            </div>
+      </div>
       <p>
       <?php echo $result['question']; ?>
       <h3>Asked by <a href="profile.php?id=<?php echo $result['userid']; ?>"><span class="underline"><?php echo getUsernameFromId($result['userid']); ?></span></a></h3>
-        <div id="topic-buttons"
         Asked on <?php echo $result['created_at']; ?>
       </p>
-    <?php if (getUsernameFromId($result['userid']) == $_SESSION['username']) { ?>
-        <a href="update.php?id=<?php echo $result['id']; ?>" class="small round button">Edit</a>
-        <?php } ?>
-        <a href="forum.php" class="small round button">Back</a>
+
         <h3>Answers:</h3>
 <?php $answerquery = "SELECT * FROM `answers` WHERE `questionid` = $questionid";
 
@@ -33,10 +37,12 @@ if ($_GET) {
       $answerresult = $answerstatement->fetchAll(PDO::FETCH_ASSOC);
 ?>
         <div id="answers">
-            <?php foreach( $answerresult as $row ): ?>
+            <?php if (empty($answerresult)) {
+              echo "No one has answered this question yet!";
+            } else foreach( $answerresult as $row ): ?>
           <p>
-              <?php echo $row['answer'] ; ?>
-            Answered by:
+          </p>
+          <p>Answered by:
             <a href="profile.php?id=<?php echo $row['userid']; ?>">   <?php echo getUsernameFromId($row['userid']); ?></a>
           <?php endforeach; ?>
           </p>

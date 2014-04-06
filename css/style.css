@@ -148,13 +148,17 @@ table, .center {
   text-decoration: underline;
 }
 
-.edit {
+#topic-buttons {
   float: right;
-  margin-top: -70px;
+  margin: 0;
+  margin-top: 10px;
 }
 
-.delete {
-  float: right;
-  margin-top: -20px;
-  margin-right: 5px;
+#button-wrapper {
+  clear: both;
+  overflow: auto;
+}
+
+#button-wrapper h1 {
+  float: left;
 }
