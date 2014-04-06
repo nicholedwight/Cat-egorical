@@ -100,10 +100,14 @@ body {
   text-align: left;
 }
 
-.forum {
+.question {
   margin: 0 auto;
   width: 600px;
   border-bottom: 1px solid grey;
+}
+
+.question:last-child {
+  border-bottom: none;
 }
 
 .forum-wrapper {

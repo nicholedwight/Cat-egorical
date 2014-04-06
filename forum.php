@@ -39,8 +39,10 @@ $db = connectToDatabase();
     </div>
     <div class="forum-wrapper">
           <?php
+          if ($result){
+
           foreach( $result as $row ):?>
-          <div class="forum">
+          <div class="question">
             <h2><a href="topic.php?id=<?php echo $row['id']; ?>">
                 <?php echo $row['subject']; ?></a></h2>
               <p>
@@ -56,7 +58,8 @@ $db = connectToDatabase();
               </a> on <?php echo $row['created_at']; ?>
               </p>
           </div>
-        <?php endforeach; ?>
+        <?php endforeach;
+      } else echo "<div class='response'>Sorry, no questions are in this category yet. :(</div>"; ?>
     </div>
 </div>
 
