@@ -34,6 +34,7 @@ $db = connectToDatabase();
       <ul class="category-list">
         <li><a href="forum.php?id=<?php echo $catrow['id']; ?>"><?php echo $catrow['name']; ?></a></li>
       <?php endforeach; ?>
+        <li><a href="forum.php">See all</a></li>
       </ul>
     </div>
     <div class="forum">
