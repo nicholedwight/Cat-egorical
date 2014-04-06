@@ -16,7 +16,7 @@ if ($_GET) {
     <div class="topic-category">
       <h3>Category:</h3>
       <?php
-      $categoryquery = "SELECT name, category_id FROM (questions JOIN questions_have_categories ON questions.id = questions_have_categories.question_id) JOIN categories ON questions_have_categories.category_id = categories.id";
+      $categoryquery = "SELECT DISTINCT name, category_id FROM (questions JOIN questions_have_categories ON questions.id = questions_have_categories.question_id) JOIN categories ON questions_have_categories.category_id = categories.id";
       $catstatement = $db->prepare($categoryquery);
       $catstatement->execute();
       $catresult = $catstatement->fetchAll(PDO::FETCH_ASSOC);

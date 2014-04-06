@@ -29,7 +29,7 @@ if ($_POST) {
     if ($length == 0) {
                       $catquery .= "('" . $catid . "',
                                    '" . $questionid . "'),";
-        } else if ($i == $length -1) {
+        } else if ($i == $length - 1) {
           $catquery .= "('" . $catid . "',
                        '" . $questionid . "')";
         } $i++;
