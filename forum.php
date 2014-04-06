@@ -38,8 +38,12 @@ $db = connectToDatabase();
             <?php echo $row['question']; ?>
           </td>
           <td>
+            <?php if (isDeletedUser($row['userid'])) {
+              echo getUsernameFromId($row['userid']);
+            } else { ?>
             <a href="profile.php?id=<?php echo $row['userid']; ?>">
-              <?php echo getUsernameFromId($row['userid']); ?>
+              <?php echo getUsernameFromId($row['userid']);
+            }?>
             </a>
           </td>
         </tr>

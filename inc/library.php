@@ -16,9 +16,18 @@ function connectToDatabase() {
 function isLoggedIn() {
   if ($_SESSION['email']) {
     return $_SESSION['email'];
-  } else {
-    return false;
-  }
+  } else return false;
+}
+
+function isDeletedUser($userid) {
+  $db = connectToDatabase();
+  $username = "SELECT `username` FROM `users` WHERE `id` = $userid";
+  $statement = $db->prepare($username);
+  $statement->execute();
+  $result = $statement->fetch(PDO::FETCH_ASSOC);
+  if ($result['username'] == "") {
+    return true;
+  } else return false;
 }
 
 function getUsernameFromId($id) {
@@ -27,7 +36,9 @@ function getUsernameFromId($id) {
   $statement = $db->prepare($username);
   $statement->execute();
   $result = $statement->fetch(PDO::FETCH_ASSOC);
-  return $result['username'];
+  if ($result['username'] == "") {
+    return "Deleted User";
+  } else return $result['username'];
 }
 
 function getUserId($email) {
