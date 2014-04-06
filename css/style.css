@@ -94,6 +94,10 @@ body {
   width: 700px;
 }
 
+.form a {
+  color: #E87581;
+}
+
 table, .center {
   margin: 0 auto;
 }
@@ -168,14 +172,33 @@ table, .center {
   margin-top: 100px;
 }
 
+.categories p {
+  background: #E87581;
+  font-size: 1.5em;
+}
+
 .categories {
-  width: 100px;
+  width: 130px;
   text-align: center;
   float: left;
   display: block;
   margin-left: 10%;
+  background: white;
 }
 
 .category-list  {
-  background: white;
+  list-style: none;
+  margin-left: 0;
+}
+
+.category-list li {
+  border-bottom: 1px solid grey;
+}
+
+.category-list a, .category-list a:visited {
+  color: #000;
+}
+
+.category-list a:hover {
+  color: #E87581;
 }

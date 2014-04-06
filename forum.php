@@ -20,7 +20,11 @@ $db = connectToDatabase();
     <div class="categories">
       <p class="category-list">Categories</p>
       <ul class="category-list">
-        <li></li>
+        <li><a href="#">Breed</a></li>
+        <li><a href="#">Rescue</a></li>
+        <li><a href="#">Adoption</a></li>
+        <li><a href="#">Breeders</a></li>
+        <li><a href="#">Vaccinations</a></li>
       </ul>
     </div>
     <div class="forum">
@@ -41,7 +45,7 @@ $db = connectToDatabase();
                 <?php echo $row['subject']; ?>
                 </a>
               </td>
-              <td width = 400px>
+              <td width = 300px>
                 <?php echo $row['question']; ?>
               </td>
               <td>

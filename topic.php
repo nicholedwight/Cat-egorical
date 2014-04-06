@@ -44,7 +44,8 @@ if ($_GET) {
           </p>
           <p>Answered by:
             <a href="profile.php?id=<?php echo $row['userid']; ?>">   <?php echo getUsernameFromId($row['userid']); ?></a>
-          <?php endforeach; ?>
+            on <?php echo $row['created_at'];
+          endforeach; ?>
           </p>
         </div>
         <h3>Answer this question:</h3>
