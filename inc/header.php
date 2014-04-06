@@ -39,8 +39,9 @@
           </li>
           <li class="has-dropdown not-click">
             <a href="profile.php?id=<?php echo getUserId($_SESSION['email']); ?>">Hello<?php if (isset($_SESSION['email'])) {
-                                            echo ", " . $_SESSION['username'];
-                                          }?>!</a></h1>
+                    $id = $_SESSION['userid'];
+                    echo ", " . getUsernameFromId($id);
+                }?>!</a></h1>
             <ul class="dropdown">
               <li class="title back js-generated">
                 <h5><a href="javascript:void(0)">Back</a></h5>

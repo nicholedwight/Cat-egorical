@@ -22,7 +22,7 @@ if ($_GET):
         <img src="
         <?php echo Gravatar::image($result['email'], null, "retro"); ?>">
       <?php }
-      if (getUsernameFromId($result['id']) == $_SESSION['username']) { ?>
+      if ($result['id'] == $_SESSION['userid']) { ?>
         <a href="userdetails.php?id=<?php echo getUserId($_SESSION['email']); ?>" class="small round button edit">Edit Profile</a>
         <a href="delete.php?id=<?php echo getUserId($_SESSION['email']) ?>" class="delete">Delete Account</a>
       <?php } ?>
