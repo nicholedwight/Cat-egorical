@@ -15,16 +15,19 @@ $db = connectToDatabase();
     $row_count = $statement->rowCount();
     $result = $statement->fetchAll(PDO::FETCH_ASSOC);
 
+    $catquery = "SELECT * FROM  `categories`";
+    $catstatement = $db->prepare($catquery);
+    $catstatement->execute();
+    $catresult = $catstatement->fetchAll(PDO::FETCH_ASSOC);
+
 ?>
 <div class="forum-container">
     <div class="categories">
       <p class="category-list">Categories</p>
+        <?php foreach($catresult as $catrow): ?>
       <ul class="category-list">
-        <li><a href="#">Breed</a></li>
-        <li><a href="#">Rescue</a></li>
-        <li><a href="#">Adoption</a></li>
-        <li><a href="#">Breeders</a></li>
-        <li><a href="#">Vaccinations</a></li>
+        <li><a href="forum.php?id=<?php echo $catrow['id']; ?>"><?php echo $catrow['name']; ?></a></li>
+      <?php endforeach; ?>
       </ul>
     </div>
     <div class="forum">
