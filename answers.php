@@ -14,7 +14,7 @@ if ($_POST) {
       $statement->execute();
 
       if ($statement->errorCode() == 0) {
-        header('Location: topic.php?id=$_SESSION[\'topicid\']');
+        header("Location: topic.php?id=" . $_SESSION['topicId']);
       } else {
         $errors = $statement->errorInfo();
         echo($errors[2]);

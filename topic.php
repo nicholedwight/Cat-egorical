@@ -5,7 +5,7 @@ if ($_GET) {
     $query = "SELECT * FROM `questions` WHERE `id` = $questionid";
     $answerquery = "SELECT * FROM `answers` WHERE `questionid` = $questionid";
 
-    $_SESSION['topicid'] = $questionid;
+    $_SESSION['topicId'] = $questionid;
 
     $statement = $db->prepare($query);
     $statement->execute();
@@ -18,8 +18,7 @@ if ($_GET) {
       <p>
       <?php echo $result['question']; ?>
       <h3>Asked by <a href="profile.php?id=<?php echo $result['userid']; ?>"><span class="underline"><?php echo getUsernameFromId($result['userid']); ?></span></a></h3>
-      </p>
-      <p>
+        <div id="topic-buttons"
         Asked on <?php echo $result['created_at']; ?>
       </p>
     <?php if (getUsernameFromId($result['userid']) == $_SESSION['username']) { ?>
