@@ -2,6 +2,8 @@ body {
   background-size: cover;
   background-repeat:no-repeat;
   background-position:center;
+  background-attachment: fixed;
+  margin-bottom: 100px;
 }
 
 #homepage {
@@ -43,6 +45,11 @@ body {
 #registration, #loginform, #questions, #userinfo {
   width: 500px;
   margin: 0 auto;
+}
+
+.ask {
+  margin-left: 42%;
+  margin-top: 45%;
 }
 
 /* This only works when on an element with a fixed height. */
@@ -107,6 +114,26 @@ table, .center {
   width: 500px;
 }
 
+.breadcrumb {
+  font-size: 14px;
+  font-weight: normal;
+  padding: 14px 0 48px;
+  color: #FFF;
+  margin-left: 100px;
+  margin-top: 45px;
+}
+
+.topic-wrapper {
+  width: 100%;
+}
+
+.topic-category {
+  color: #FFF;
+  width: 200px;
+  margin-left: 100px;
+  float: left;
+}
+
 .underline {
   text-decoration: underline;
 }
@@ -138,7 +165,7 @@ table, .center {
 
 .profile-info {
   margin: 0 auto;
-  margin-top: 50px;
+  margin-top: 0px;
   width: 700px;
   border: solid white 2px;
   border-radius: 5px;
@@ -159,7 +186,6 @@ table, .center {
 }
 
 #button-wrapper {
-  clear: both;
   overflow: auto;
 }
 

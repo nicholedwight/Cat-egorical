@@ -11,6 +11,23 @@ if ($_GET) {
     $statement->execute();
     $result = $statement->fetch(PDO::FETCH_ASSOC); ?>
     <body id="topic">
+      <p class="breadcrumb"><a href="forum.php">Forum</a> &gt; <?php echo "Category"; ?></p>
+    <div class="topic-wrapper">
+    <div class="topic-category">
+      <h3>Category:</h3>
+      <?php
+      $categoryquery = "SELECT name, category_id FROM (questions JOIN questions_have_categories ON questions.id = questions_have_categories.question_id) JOIN categories ON questions_have_categories.category_id = categories.id";
+      $catstatement = $db->prepare($categoryquery);
+      $catstatement->execute();
+      $catresult = $catstatement->fetchAll(PDO::FETCH_ASSOC);
+
+      if (empty($catresult)) {
+        echo "No categories";
+      } else foreach($catresult as $catname) {
+          echo "<p>" . $catname['name'] . "</p>";
+      }
+      ?>
+    </div>
     <div class="profile-info">
       <div id="button-wrapper">
           <h1>
@@ -20,7 +37,6 @@ if ($_GET) {
             <?php if (getUsernameFromId($result['userid']) == $_SESSION['username']) { ?>
                 <a href="update.php?id=<?php echo $result['id']; ?>" class="small round button">Edit</a>
                 <?php } ?>
-                <a href="forum.php" class="small round button">Back</a>
             </div>
       </div>
       <p>
@@ -55,6 +71,8 @@ if ($_GET) {
           <input type="hidden" value="<?php echo $questionid; ?>" id="questionid" name="questionid">
         </form>
       </div>
+    </div>
+  </div>
 
 
  <?php }
