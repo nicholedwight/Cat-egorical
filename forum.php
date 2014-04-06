@@ -13,8 +13,8 @@ $db = connectToDatabase();
     $catresult = $catstatement->fetchAll(PDO::FETCH_ASSOC);
 
     if ($_GET) {
-      $questionid = $_GET['question_id'];
-      $getquery = "SELECT * FROM `questions` WHERE `id` = $questionid";
+      $catid = $_GET['id'];
+      $getquery = "SELECT * FROM (questions JOIN questions_have_categories ON questions.id = questions_have_categories.question_id) JOIN categories ON questions_have_categories.category_id = categories.id WHERE category_id = $catid";
       $statement = $db->prepare($getquery);
       $statement->execute();
       $row_count = $statement->rowCount();
