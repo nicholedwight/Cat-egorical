@@ -7,19 +7,25 @@
 <body id="forumpage">
 <?php
 $db = connectToDatabase();
-
-    $query = "SELECT * FROM `questions`";
-
-    $statement = $db->prepare($query);
-    $statement->execute();
-    $row_count = $statement->rowCount();
-    $result = $statement->fetchAll(PDO::FETCH_ASSOC);
-
     $catquery = "SELECT * FROM  `categories`";
     $catstatement = $db->prepare($catquery);
     $catstatement->execute();
     $catresult = $catstatement->fetchAll(PDO::FETCH_ASSOC);
 
+    if ($_GET) {
+      $questionid = $_GET['question_id'];
+      $getquery = "SELECT * FROM `questions` WHERE `id` = $questionid";
+      $statement = $db->prepare($getquery);
+      $statement->execute();
+      $row_count = $statement->rowCount();
+      $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+    } else {
+             $query = "SELECT * FROM `questions`";
+             $statement = $db->prepare($query);
+             $statement->execute();
+             $row_count = $statement->rowCount();
+             $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+    }
 ?>
 <div class="forum-container">
     <div class="categories">
