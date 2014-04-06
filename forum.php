@@ -16,41 +16,49 @@ $db = connectToDatabase();
     $result = $statement->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
-<div class="forum">
-  <table>
-    <thead>
-      <tr>
-        <td>Topic</td>
-        <td>Question</td>
-        <td>Asked By</td>
-      </tr>
-    </thead>
-    <tbody>
-      <?php
-      foreach( $result as $row ):?>
-        <tr>
-          <td>
-            <a href="topic.php?id=<?php echo $row['id']; ?>">
-            <?php echo $row['subject']; ?>
-            </a>
-          </td>
-          <td width = 400px>
-            <?php echo $row['question']; ?>
-          </td>
-          <td>
-            <?php if (isDeletedUser($row['userid'])) {
-              echo getUsernameFromId($row['userid']);
-            } else { ?>
-            <a href="profile.php?id=<?php echo $row['userid']; ?>">
-              <?php echo getUsernameFromId($row['userid']);
-            }?>
-            </a>
-          </td>
-        </tr>
-    <?php endforeach;
-      ?>
-    </tbody>
-  </table>
+<div class="forum-container">
+    <div class="categories">
+      <p class="category-list">Categories</p>
+      <ul class="category-list">
+        <li></li>
+      </ul>
+    </div>
+    <div class="forum">
+      <table>
+        <thead>
+          <tr>
+            <td>Topic</td>
+            <td>Question</td>
+            <td>Asked By</td>
+          </tr>
+        </thead>
+        <tbody>
+          <?php
+          foreach( $result as $row ):?>
+            <tr>
+              <td>
+                <a href="topic.php?id=<?php echo $row['id']; ?>">
+                <?php echo $row['subject']; ?>
+                </a>
+              </td>
+              <td width = 400px>
+                <?php echo $row['question']; ?>
+              </td>
+              <td>
+                <?php if (isDeletedUser($row['userid'])) {
+                  echo getUsernameFromId($row['userid']);
+                } else { ?>
+                <a href="profile.php?id=<?php echo $row['userid']; ?>">
+                  <?php echo getUsernameFromId($row['userid']);
+                }?>
+                </a>
+              </td>
+            </tr>
+        <?php endforeach;
+          ?>
+        </tbody>
+      </table>
+    </div>
 </div>
 
 <?php
