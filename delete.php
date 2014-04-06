@@ -1,6 +1,11 @@
 <?php
 use forxer\Gravatar\Gravatar;
-include("inc/header.php"); ?>
+include("inc/header.php");
+if (getUsernameFromId($result['userid']) != $_SESSION['username']):
+  die(header("Location: forum.php"));
+else:
+
+?>
 <body id="profile">
 <?php
 if ($_GET):
@@ -25,5 +30,6 @@ if ($_GET):
 
 
 <?php
+endif;
 endif;
 include("inc/footer.php") ?>
