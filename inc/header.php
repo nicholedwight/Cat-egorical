@@ -38,7 +38,7 @@
             ?>
           </li>
           <li class="has-dropdown not-click">
-            <a href="profile.php">Hello<?php if (isset($_SESSION['email'])) {
+            <a href="profile.php?id=<?php echo getUserId($_SESSION['email']); ?>">Hello<?php if (isset($_SESSION['email'])) {
                                             echo ", " . $_SESSION['username'];
                                           }?>!</a></h1>
             <ul class="dropdown">

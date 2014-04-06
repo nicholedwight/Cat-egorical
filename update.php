@@ -10,12 +10,14 @@ if ($_POST) {
   $statement = $db->prepare($query);
   $statement->execute(array(":subject" => $subject, ":question" => $question));
 
+  echo "<div class='response'>";
   if ($statement->errorCode() == 0) {
     echo "Thanks! Your questions was recieved successfully!";
   } else {
     $errors = $statement->errorInfo();
     echo($errors[2]);
   }
+  echo "</div>";
 }
 
 

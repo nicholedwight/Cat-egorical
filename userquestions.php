@@ -6,8 +6,8 @@ if ($_GET):
     $statement = $db->prepare($query);
     $statement->execute();
     $result = $statement->fetchAll(PDO::FETCH_ASSOC); ?>
-
-    <div class="forum">
+    <body id="userqpage">
+    <div class="userquestions">
       <table>
         <thead>
           <tr>

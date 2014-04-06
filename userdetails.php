@@ -14,8 +14,7 @@ if ($_POST) {
     $id = $_GET['id'];
     $query = "UPDATE `users`
     SET  `name` = :name" .
-    ", `username` = '"   . $_POST['username'] .
-    "', `email` = '"      . $_POST['email'] . "'";
+    ", `username` = :username, `email` = :email";
     if (isset($bio)) {
       $query .= ", `bio` =  :bio";
     }
@@ -28,7 +27,7 @@ if ($_POST) {
       $query .= " WHERE `id` = '"    . $id . "'";
 
   $statement = $db->prepare($query, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
-  $statement->execute(array(':name' => $_POST['name'], ':bio' => $_POST['bio'])); ?>
+  $statement->execute(array(':name' => $_POST['name'], ':bio' => $_POST['bio'], ':username' => $username, ':email' => $email)); ?>
   <div class="user-response">
     <?php if ($statement->errorCode() == 0) {
       echo "Details have been saved!";
