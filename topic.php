@@ -43,7 +43,12 @@ if ($_GET) {
       </div>
       <p>
       <?php echo $result['question']; ?>
-      <h3>Asked by <a href="profile.php?id=<?php echo $result['userid']; ?>"><span class="underline"><?php echo getUsernameFromId($result['userid']); ?></span></a></h3>
+      <h3>Asked by <?php if (isDeletedUser($result['userid'])) {
+        echo getUsernameFromId($result['userid']);
+      } else { ?>
+      <a href="profile.php?id=<?php echo $result['userid']; ?>"><span class="underline">
+        <?php echo getUsernameFromId($result['userid']);
+      }?></span></a></h3>
         Asked on <?php echo $result['created_at']; ?>
       </p>
 

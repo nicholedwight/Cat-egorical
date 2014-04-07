@@ -256,4 +256,49 @@ table, .center {
 
 .small {
   font-size: 0.7em;
+  border-bottom: 1px solid #FFF;
+}
+
+#home-wrapper {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.tabs {
+  float:right;
+  color: #000;
+  margin-top: -36px;
+  line-height: 20px;
+}
+
+.tabs a.current {
+  border: 1px solid #ccc;
+  border-bottom-color: rgba(255, 255, 255, 0.7);
+  height: 30px;
+  padding: 0 11px 0 11px;
+}
+
+.tabs a {
+  background: inherit;
+  border: 1px solid transparent;
+  display: block;
+  float: left;
+  color: #000;
+  height: 24px;
+  padding: 0 11px 27px 11px;
+  margin: 0 9px 0 9px;
+  text-decoration: none;
+  border-bottom: 1px solid #ccc;
+}
+
+.tabs a:hover {
+  border: 1px solid #ccc;
+  border-bottom-color: transparent;
+}
+
+.subheader {
+  border-bottom: 1px solid #ccc;
+  height: 34px;
+  clear: both;
+  margin: 200px 400px;
+  color: #000;
 }
