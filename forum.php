@@ -13,14 +13,14 @@ $db = connectToDatabase();
     $catresult = $catstatement->fetchAll(PDO::FETCH_ASSOC);
 
     if ($_GET) {
-      $catid = $_GET['id'];
-      $getquery = "SELECT * FROM (questions JOIN questions_have_categories ON questions.id = questions_have_categories.question_id) JOIN categories ON questions_have_categories.category_id = categories.id WHERE category_id = $catid";
+      $catid = $_GET['cat_id'];
+      $getquery = "SELECT questions.id AS question_id, questions.subject, questions.question, questions.created_at, questions.userid, categories.* FROM (questions JOIN questions_have_categories ON questions.id = questions_have_categories.question_id) JOIN categories ON questions_have_categories.category_id = categories.id WHERE category_id = $catid";
       $statement = $db->prepare($getquery);
       $statement->execute();
       $row_count = $statement->rowCount();
       $result = $statement->fetchAll(PDO::FETCH_ASSOC);
     } else {
-             $query = "SELECT * FROM `questions`";
+             $query = "SELECT questions.id AS question_id, questions.subject, questions.question, questions.created_at, questions.userid FROM `questions`";
              $statement = $db->prepare($query);
              $statement->execute();
              $row_count = $statement->rowCount();
@@ -32,7 +32,7 @@ $db = connectToDatabase();
       <p class="category-list">Categories</p>
         <?php foreach($catresult as $catrow): ?>
       <ul class="category-list">
-        <li><a href="forum.php?id=<?php echo $catrow['id']; ?>"><?php echo $catrow['name']; ?></a></li>
+        <li><a href="forum.php?cat_id=<?php echo $catrow['id']; ?>"><?php echo $catrow['name']; ?></a></li>
       <?php endforeach; ?>
         <li><a href="forum.php">See all</a></li>
       </ul>
@@ -43,7 +43,7 @@ $db = connectToDatabase();
 
           foreach( $result as $row ):?>
           <div class="question">
-            <h2><a href="topic.php?id=<?php echo $row['id']; ?>">
+            <h2><a href="topic.php?id=<?php echo $row['question_id']; ?>">
                 <?php echo $row['subject']; ?></a></h2>
               <p>
                 <?php echo $row['question']; ?>
