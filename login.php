@@ -50,7 +50,7 @@ if($password == '') {
         }
         ?>
         <label for="email" required>Login</label>
-        <input type="text" name="email" value="" id="email" placeholder="Enter your username or email">
+        <input type="text" name="email" value="" id="email" placeholder="Enter your email">
 
         <label for="password" required>Password</label>
         <input type="password" name="password" value="" id="password" placeholder="Password">

@@ -51,6 +51,10 @@ body {
   margin: 0 auto;
 }
 
+#userinfo p {
+  color: #FFF;
+}
+
 .ask {
   margin-left: 42%;
   margin-top: 45%;
