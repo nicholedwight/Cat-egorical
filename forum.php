@@ -45,9 +45,6 @@ $db = connectToDatabase();
           <div class="question">
             <h2><a href="topic.php?id=<?php echo $row['question_id']; ?>">
                 <?php echo $row['subject']; ?></a></h2>
-              <p>
-                <?php echo $row['question']; ?>
-              </p>
               <p>Asked by:
                 <?php if (isDeletedUser($row['userid'])) {
                   echo getUsernameFromId($row['userid']);
