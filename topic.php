@@ -23,8 +23,10 @@ if ($_GET) {
 
       if (empty($catresult)) {
         echo "No categories";
-      } else foreach($catresult as $catname) {
-          echo "<p>" . $catname['name'] . "</p>";
+      } else foreach($catresult as $catname) { ?>
+        <a href="forum.php?cat_id=<?php echo $catname['category_id']; ?>">
+          <?php echo "<p>" . $catname['name'] . "</p>"; ?>
+        </a><?php
       }
       ?>
     </div>
@@ -62,8 +64,9 @@ if ($_GET) {
           <p>Answered by:
             <a href="profile.php?id=<?php echo $row['userid']; ?>">   <?php echo getUsernameFromId($row['userid']); ?></a>
             on <?php echo $row['created_at'];
-          endforeach; ?>
-          </p>
+      ?>  </p>  <?php
+        endforeach; ?>
+
         </div>
         <h3>Answer this question:</h3>
         <form id="answers-form" method="POST" action="answers.php">

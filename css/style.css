@@ -144,6 +144,7 @@ table, .center {
 
 .topic-wrapper {
   width: 100%;
+  margin-top: -100px;
 }
 
 .topic-category {
