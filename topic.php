@@ -61,7 +61,7 @@ if ($_GET) {
               echo $row['answer']; ?>
           <p>
           </p>
-          <p>Answered by:
+          <p class="small">Answered by:
             <a href="profile.php?id=<?php echo $row['userid']; ?>">   <?php echo getUsernameFromId($row['userid']); ?></a>
             on <?php echo $row['created_at'];
       ?>  </p>  <?php

@@ -253,3 +253,7 @@ table, .center {
 .category-list a:hover {
   color: #E87581;
 }
+
+.small {
+  font-size: 0.7em;
+}

@@ -18,6 +18,7 @@ if ($_POST) {
   <div class="response">
   <?php  if ($statement->errorCode() == 0) {
     echo "Thanks! Your registration was successful!";
+    header("Location: index.php");
     } else {
     $errors = $statement->errorInfo();
     echo "Sorry! That email is already in use!";
