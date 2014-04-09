@@ -15,8 +15,8 @@
 </div>
 <a href="submission.php" class="small round button ask">Ask A Question!</a>
 
-
 <?php
+
 endif;
 ?>
 <?php include("inc/footer.php")
